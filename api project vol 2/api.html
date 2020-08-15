@@ -1,0 +1,185 @@
+﻿<!DOCTYPE html>
+<html>
+   <head>
+
+      <title>api proj</title>
+    <style>
+    	.satauri{
+    		color:#FF0000;
+    	}
+         #desc{
+           position:absolute;
+           top:220px;
+         }
+         #descB{
+         	position:absolute;
+         	top:300px;
+         	left:40px;
+         	width:200px;
+         	height:80px;
+         	font-size:40px;
+         }
+         #regB{
+           position:absolute;
+           left:700px;
+           top:350px;
+           width:240px;
+           height:80px;
+           font-size:30px;
+         }
+         #login{
+            position:absolute;
+            left:700px;
+            top:45px;
+             width:130px;
+         }
+    </style>
+	
+   </head>
+
+            <body>
+
+       <h1 class = "satauri" >სანდრო ბუკი</h1>
+        <h3 id = "desc" >საუკეთესო საიტი , ფეისბუკს ათასჯერ ჯობია 100% .<br> თუ გინდა დამტკიცება რატომ  დააჭირეტ ღილაკს "რატომ?"</h3>
+        <button id = "descB" >რატომ?</button>
+        <a id = "regBA" ><button id = "regB" > რეგისტრაცია</button></a>
+        <a id = "loginA" ><button id = "login">შესვლა</button></a>
+            <script>
+                 
+            	 document.body.style.backgroundColor = "#00FF00";
+            	 //ipnuts for reg
+            	 var inputs_form = document.createElement("form");
+                 var input_name = document.createElement("input");
+                 var input_surName = document.createElement("input");
+                 var input_mail = document.createElement("input");
+                 var input_pass = document.createElement("input");
+
+                 var input_mail_login = document.createElement("input");
+                 var input_pass_login = document.createElement("input");
+
+                    //inputs for reg part 2
+                 input_name.style.position = "absolute";
+                 input_surName.style.position = "absolute";
+                 input_mail.style.position = "absolute";
+                 input_pass.style.position = "absolute";
+                 
+                 input_surName.style.left = "260px";
+                 input_name.type = "text";
+                 input_surName.type = "text";
+                 input_mail.type = "mail";
+                 input_pass.type = "password";
+                 
+                 input_mail_login.type = "mail";
+                 input_pass_login.type = "password";
+
+                 input_mail_login.placeholder = "Email";
+                 input_pass_login.placeholder = "პაროლი";
+
+                 input_name.placeholder = "სახელი";
+                 input_surName.placeholder = "გვარი";
+                 input_mail.placeholder = "Email";
+                 input_pass.placeholder = "პაროლი(მაგ:ლეკვისბუდე)";
+
+                 //inputs_form.appendChild();
+                 inputs_form.appendChild(input_name);
+                 inputs_form.appendChild(input_surName);
+                 inputs_form.appendChild(input_mail);
+                 inputs_form.appendChild(input_pass);
+
+                 inputs_form.appendChild(input_mail_login);
+                 inputs_form.appendChild(input_pass_login);
+
+
+                 inputs_form.style.position = "absolute";
+                 
+                 input_mail_login.style.position = "absolute";
+                 input_pass_login.style.position = "absolute";
+                 input_mail_login.style.top = "-130px";
+                 input_pass_login.style.top = "-130px";
+                 input_pass_login.style.left = "190px";
+
+                 inputs_form.style.left = "700px";
+                 input_mail.style.width = "350px";
+                 inputs_form.style.top = "150px";
+                 input_mail.style.top = "60px";
+                 input_pass.style.top = "120px";
+                 //size
+                  input_name.style.height = "45px"; 
+                  input_surName.style.height = "45px"; 
+                  input_mail.style.height = "45px"; 
+                  input_pass.style.height = "45px"; 
+
+                  input_name.style.fontSize = "20px";
+                  input_surName.style.fontSize = "20px";
+                  input_mail.style.fontSize = "20px";
+                  input_pass.style.fontSize = "20px";                   
+                   
+
+
+                 var gogo = document.createElement("img");
+                 gogo.src = "gogo.png";
+                 gogo.style.position = "absolute";
+                 gogo.style.left = "300px";
+                 gogo.style.top = "45%";
+                 gogo.style.width = "600px";
+                 gogo.style.zIndex = "-1";
+                 var head_one = document.createElement("h1");
+                 var character_image = document.createElement("img");
+                 var sandro_image = document.createElement("img");
+                 var descB = document.getElementById("descB");
+                 var regB = document.getElementById("regB");
+                 var login = document.getElementById("login");
+                 var regBA = document.getElementById("regBA");
+                 var loginA = document.getElementById("loginA");
+
+                 sandro_image.src = "sandro.png";
+                 sandro_image.style.width = "200px";
+                  sandro_image.style.position = "absolute";
+                  sandro_image.style.top = "100px";
+                  sandro_image.style.left = "10px";
+                 head_one.style.color = "#0000FF";
+                 character_image.src = "image.png";
+                 character_image.style.width = "400px";
+                 character_image.style.position = "absolute";
+                 character_image.style.left = "20px";
+                 character_image.style.top = "400px"; 
+
+                   
+                    var head_descB = document.createElement("h3");
+                    var head_descBT = document.createTextNode("იმიტომ რომ ძალიან მაგარი საიტია, უბრალოდ სიტყვაზე გვენდეთ.");
+                    head_descB.style.position = "absolute";
+                    head_descB.style.top = "600px";
+                    head_descB.style.left = "200px";
+                    head_descB.appendChild(head_descBT);
+
+                  
+                    const ratom = () =>{
+                           document.body.appendChild(head_descB);      } 
+
+
+                 descB.addEventListener("click",ratom,false);
+
+
+                    const registrationFUNC = () =>{
+                       //localStorage.setItem(input_name + "_name",input_name);
+                         
+
+
+                           if(input_mail_login == "null"){
+                           	alert("noo");
+                           }
+                         else{alert("yess");}
+                    }
+
+                  regB.addEventListener("click",registrationFUNC,false)
+                 //document.body.appends;
+                 //    document.body.appendChild();
+                  document.body.appendChild(gogo);
+                 document.body.appendChild(inputs_form);
+                 document.body.appendChild(head_one);
+                 document.body.appendChild(sandro_image);
+                 document.body.appendChild(character_image);
+                 
+            </script>
+         </body>
+</html>
